@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pobblyboo — Born from light, made for smiles</title>
+  <meta name="description" content="Pobblyboo — cute pastel underwater IP. Lore, vision, gallery, roadmap, and socials." />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#ffd6f2;
+      --blue:#c9e7ff;
+      --accent:#6aa6d9;
+      --muted:#6b7b88;
+      --whiteglow: rgba(255,255,255,0.6);
+      --glass: rgba(255,255,255,0.55);
+      --card: rgba(255,255,255,0.85);
+      --radius:18px;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Fredoka',system-ui,Arial;background:linear-gradient(160deg,var(--pink),var(--blue));color:#123;}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:84px;height:84px;object-fit:contain}
+    h1{font-size:1.4rem;margin:0;color:#0f4b6f}
+    .tag{color:var(--muted);font-size:0.95rem}
+
+    /* nav */
+    nav{display:flex;gap:10px;align-items:center}
+    .nav-btn{background:transparent;border:1px solid rgba(255,255,255,0.25);padding:8px 12px;border-radius:999px;color:#07374a;font-weight:600;cursor:pointer}
+    .nav-btn:hover{transform:translateY(-2px)}
+
+    /* hero */
+    .hero{display:flex;gap:26px;align-items:center;margin-top:26px}
+    .hero-left{flex:1}
+    .hero-right{width:360px}
+
+    .card{background:var(--card);backdrop-filter:blur(6px);padding:18px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(5,20,40,0.08)}
+    h2{margin:0 0 8px;color:#0d5677}
+    p.lead{margin:0 0 14px;color:#164a60}
+
+    /* sections grid */
+    section{margin-top:20px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .tile{padding:14px;border-radius:14px;background:var(--glass);}
+
+    /* gallery */
+    .gallery-img{width:100%;border-radius:12px;display:block}
+
+    /* roadmap */
+    .roadmap{display:flex;flex-direction:column;gap:10px}
+    .step{display:flex;gap:12px;align-items:flex-start}
+    .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);margin-top:6px;flex:0 0 12px}
+
+    /* socials */
+    .socials{display:flex;gap:10px;flex-wrap:wrap}
+    .social-item{padding:8px 12px;border-radius:12px;background:rgba(255,255,255,0.2)}
+
+    footer{margin:28px 0 6px;text-align:center;color:rgba(0,0,0,0.5);font-size:0.9rem}
+
+    /* bubbles background */
+    .bubbles{position:fixed;inset:0;z-index:-1;pointer-events:none}
+    .bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,0.12);filter:blur(6px)}
+
+    /* responsive */
+    @media (max-width:900px){.hero{flex-direction:column}.hero-right{width:100%}.logo{width:72px;height:72px}}
+  </style>
+</head>
+<body>
+  <div class="bubbles" aria-hidden="true">
+    <div class="bubble" style="width:260px;height:260px;left:10%;top:5%;"></div>
+    <div class="bubble" style="width:160px;height:160px;right:8%;top:20%;"></div>
+    <div class="bubble" style="width:110px;height:110px;left:50%;top:60%;"></div>
+    <div class="bubble" style="width:200px;height:200px;right:30%;bottom:10%;"></div>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img class="logo" src="https://i.ibb.co/b5twS3hX/Picsart-25-12-03-11-15-14-286.png" alt="Pobblyboo logo">
+        <div>
+          <h1>Pobblyboo</h1>
+          <div class="tag">Born from light, made for smiles</div>
+        </div>
+      </div>
+
+      <button id="menuToggle" class="nav-btn" style="padding:10px 16px;font-size:1rem">MENU</button>
+      <nav id="mainMenu" style="display:none;flex-direction:column;gap:10px;margin-top:10px;background:rgba(255,255,255,0.4);padding:14px;border-radius:18px;backdrop-filter:blur(8px)">
+        <button class="nav-btn" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">Home</button>
+        <button class="nav-btn" onclick="document.getElementById('lore').scrollIntoView({behavior:'smooth'})">Lore</button>
+        <button class="nav-btn" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Gallery</button>
+        <button class="nav-btn" onclick="document.getElementById('roadmap').scrollIntoView({behavior:'smooth'})">Roadmap</button>
+        <button class="nav-btn" onclick="document.getElementById('socials').scrollIntoView({behavior:'smooth'})">Socials</button>
+        <button class="nav-btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</button>
+      </nav>
+    </header>
+
+    <main id="home">
+      <div class="hero">
+        <div class="hero-left">
+          <h2>Welcome to Pobblyboo</h2>
+          <p class="lead">A soft pastel underwater world where Bubblelight brings joy. Explore the lore, meet characters, and join the journey.</p>
+
+          <div class="grid">
+            <div class="tile card">
+              <h3 style="margin:0 0 8px">Lore</h3>
+              <p>Pobblyboo was born from tiny glowing bubbles drifting deep into the sea. Each bubble carried a spark of joy until a pastel kingdom awakened. Now the realm gently restores its Bubblelight through warmth and wonder.</p>
+            </div>
+
+            <div class="tile card">
+              <h3 style="margin:0 0 8px">Vision</h3>
+              <p>Become the world’s largest cute and whimsical underwater IP, connecting imagination, stories, and community into one living universe.</p>
+            </div>
+
+            <div class="tile card">
+              <h3 style="margin:0 0 8px">Mission</h3>
+              <p>Build a strong IP world through stories, visuals, and character-driven experiences that spread joy and creativity.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right card">
+          <h3 style="margin-top:0">Quick Links</h3>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <a class="nav-btn" href="#gallery">View Gallery</a>
+            <a class="nav-btn" href="#roadmap">See Roadmap</a>
+            <a class="nav-btn" href="#socials">Contact & Socials</a>
+          </div>
+        </div>
+      </div>
+
+      <section id="gallery">
+        <h2 style="margin-top:26px">Gallery — Character previews</h2>
+        <div class="grid">
+          <div class="tile card"><img class="gallery-img" src="https://i.ibb.co/99YW61Cx/Picsart-25-12-03-12-07-06-059.jpg" alt="#001"><h4>#001</h4></div>
+          <div class="tile card"><img class="gallery-img" src="https://i.ibb.co/JW5JsCdm/Picsart-25-12-03-12-06-12-432.jpg" alt="#002"><h4>#002</h4></div>
+          <div class="tile card"><img class="gallery-img" src="https://i.ibb.co/23TJ2kqr/Picsart-25-12-03-12-04-23-805.jpg" alt="#003"><h4>#003</h4></div>
+          <div class="tile card"><img class="gallery-img" src="https://i.ibb.co/twgN3YxS/Picsart-25-12-03-12-05-20-919.jpg" alt="#004"><h4>#004</h4></div>
+        </div>
+      </section>
+
+      <section id="roadmap">
+        <h2 style="margin-top:26px">Roadmap</h2>
+        <div class="roadmap">
+          <div class="step"><div class="dot"></div><div><strong>Community foundation</strong><div class="muted">Build an engaged crew of early fans and partners.</div></div></div>
+          <div class="step"><div class="dot"></div><div><strong>Character trait development</strong><div class="muted">Design and polish early character traits.</div></div></div>
+          <div class="step"><div class="dot"></div><div><strong>Collaboration & whitelist phases</strong><div class="muted">Partner launches & FCFS waves.</div></div></div>
+          <div class="step"><div class="dot"></div><div><strong>Worldbuilding & storytelling</strong><div class="muted">Expand lore through short stories & art.</div></div></div>
+          <div class="step"><div class="dot"></div><div><strong>Art expansion & launch preparation</strong><div class="muted">Finalize art, mint mechanics, and launch plan.</div></div></div>
+        </div>
+      </section>
+
+      <section id="socials">
+        <h2 style="margin-top:26px">Socials & Contact</h2>
+        <div class="socials">
+          <div class="social-item">X: @pobblyboo</div>
+          <div class="social-item">Farcaster: @pobblyboo</div>
+          <div class="social-item">Email: team@pobblyboo.xyz</div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2 style="margin-top:26px">About</h2>
+        <p class="muted">Pobblyboo is a gentle pastel universe beneath the ocean—where Bubblelight fuels life, creatures protect harmony, and tiny moments of wonder shape the world.</p>
+      </section>
+
+    </main>
+
+    <footer>© Pobblyboo — Born from light, made for smiles.</footer>
+  </div>
+
+  <script>
+    // No wallet code — site is lightweight and static
+    // Smooth scroll is handled by button onclicks above
+    // If you want floating animated bubbles, I can add CSS keyframes (very light)
+  </script>
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('mainMenu');
+    toggle.addEventListener('click', ()=>{
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+    });
+  </script>
+</body>
+</html>
+
